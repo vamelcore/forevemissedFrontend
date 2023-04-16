@@ -16,7 +16,7 @@ import ChevronIcon from './icons/ChevronIcon.vue'
       <MenuItems class="absolute right-0 z-10 sm:w-80 origin-top-right rounded-md bg-[#F6EFE6] shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
         <div class="py-1">
           <div :class="['bg-[#F6EFE6] hover:bg-[#FFF8EF] px-4 py-3 flex gap-3 cursor-pointer']">
-            <div class="w-6 h-6 flex align-middle">
+            <div class="w-6 h-6 flex items-center">
             </div>
             <div>
               <p class="text-md font-semibold">Guest</p>
@@ -24,7 +24,7 @@ import ChevronIcon from './icons/ChevronIcon.vue'
             </div>
           </div>
           <div :class="['bg-[#FFF8EF] hover:bg-[#FFF8EF] px-4 py-3 flex gap-3 cursor-pointer']">
-            <div class="w-6 h-6 flex align-middle">
+            <div class="w-6 h-6 flex items-center">
               <CheckIcon></CheckIcon>
             </div>
             <div>
