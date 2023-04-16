@@ -9,17 +9,12 @@
   font-weight: normal;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+.bg-gradient {
+  background: linear-gradient(90deg, #64362D 0%, #82544B 100%);
 }
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+.no-focus:focus-visible {
+  outline: none;
+  border: none;
 }
 
 @media (min-width: 1024px) {
