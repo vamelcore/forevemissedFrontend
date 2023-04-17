@@ -27,7 +27,7 @@ export default {
     ItemBlock
   },
   props: ['openWindow'],
-  emits: ['update:openWindow'],
+  emits: ['update:openWindow', 'recipientsSend'],
   computed: {
     open: {
       get() {
@@ -66,6 +66,7 @@ export default {
         if (responce?.data?.success ) {
           this.recipients = []
           this.open = false
+          this.$emit('recipientsSend')
         }
       })
       .catch(error => {
@@ -124,6 +125,10 @@ export default {
                 <div class="flex justify-between items-center mx-6 gap-2">
                   <input :class="v$.recipientEmail.$error ? 'border-red-700 border-2':'border-[#333333]/[.16]'" class="h-12 bg-white px-4 py-3 border rounded-md grow text-base" v-model.trim="recipientEmail" placeholder="Enter people E-mails" />
                   <button class="h-12 border border-[#D1CAC1] rounded-md px-6 py-3 text-base" @click="addRecipient()">Add</button>
+                </div>
+                <div v-if="v$.recipientEmail.$error" class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mx-6 mt-3" role="alert">
+                  <strong class="font-bold">Error! </strong>
+                  <span class="block sm:inline">{{ v$.recipientEmail.$errors[0].$message }}</span>
                 </div>
                 <div class="flex justify-start items-center gap-3 m-6 mt-4">
                   <span class="text-base">or add from</span>
